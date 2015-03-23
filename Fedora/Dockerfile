@@ -1,7 +1,7 @@
-FROM fedora/systemd-systemd
+FROM fedora:21
 
 MAINTAINER Nandaja Varma <nandaja.varma@gmail.com>
-RUN yum -y install wget openssh deltarpm
+RUN yum -y install wget deltarpm
 RUN wget http://download.gluster.org/pub/gluster/glusterfs/3.6/3.6.2/Fedora/glusterfs-fedora.repo -O /etc/yum.repos.d/glusterfs-fedora.repo
 RUN yum --setopt=tsflags=nodocs -y install glusterfs glusterfs-server glusterfs-fuse glusterfs-geo-replication glusterfs-cli glusterfs-api
 RUN yum clean all
